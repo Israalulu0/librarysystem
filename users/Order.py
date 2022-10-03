@@ -7,7 +7,7 @@ class Order:
         self.__book_id=book_id
         self.__order_status=order_status
 
-    def set_date(self):
+
 
     def get_order_status(self):
         return self.__order_status
