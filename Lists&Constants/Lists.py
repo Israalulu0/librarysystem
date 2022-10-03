@@ -2,6 +2,7 @@ from constants import Constants
 from users.Client import Client
 from users.Librarian import Librarian
 from users.book import Book
+from users.Order import Order
 
 class Lists:
     Client_list: list[Client] = [
@@ -20,7 +21,9 @@ class Lists:
         Book(3, "Chemistry", "This book introduces the chemical reactions","James",Constants.Active_Book),
         Book(4, "Life & Science", "This Book specializes in development","Ibrahim",Constants.Inactive_Book)]
 
-
+    Borrow_Orders_list: list[Order]= [
+        Order(1)
+    ]
 
     def get_Client_list(self):
         return self.Client_list
