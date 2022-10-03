@@ -34,6 +34,8 @@ class Lists:
         return self.Librarian_list
     def get_Book_list(self):
         return self.Book_list
+    def get_Borrow_Orders_list(self):
+        return self.Borrow_Orders_list
 
 
 
