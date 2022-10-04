@@ -1,8 +1,8 @@
-from Client import Client
+from users.Client import Client
 class Order:
     def __init__(self,order_id,client_id,date,book_id,order_status):
         self.__order_id=order_id
-        self.__client_id=Client.get_id()
+        self.__client_id=client_id
         self.__date=date
         self.__book_id=book_id
         self.__order_status=order_status

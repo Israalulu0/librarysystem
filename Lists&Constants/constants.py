@@ -1,11 +1,15 @@
 class Constants:
     FULL_TIME = 1
     PART_TIME = 2
-    Active_Book=1
-    Inactive_Book=2
-    Active_order=1
-    Expired_order=2
-    Cancelled_order=3
+    Active_Book=3
+    Inactive_Book=4
+    Active_order=5
+    Expired_order=6
+    Cancelled_order=7
+    Librarian=8
+    Client=9
+
+
 
 class Check_empty:
 

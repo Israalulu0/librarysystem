@@ -1,8 +1,8 @@
 from constants import Constants
-
 from users.Client import Client
 from users.Librarian import Librarian
 from users.book import Book
+from Lists import Lists 
 
 
 def register_new_client(self, client: Client):
@@ -18,10 +18,17 @@ def register_new_book(self, book: Book):
         print("Book already exist!")
 
 def check_if_client_exsist(self, id: str):
-        for item in self.Client_list:
+        for item in self.Lists.Client_list:
             if item.get_id() == id:
                 return True
         return False
+
+
+def check_if_Librarian_exsist(self, id: str):
+    for item in self.Lists.Librarian_list:
+        if id == item.get_id() :
+            return True
+    return False
 
 
 def check_if_book_available(self, name: str):
@@ -29,6 +36,16 @@ def check_if_book_available(self, name: str):
         if item.get_book_status() == Constants.Active_Book:
             return True
     return False
+
+def search_user_type(self, id:str):
+    if check_if_Librarian_exsist(self, id) == True:
+        return Constants.Librarian
+    elif check_if_client_exsist(self, id):
+        return Constants.Client
+    else:
+        print("enter a valid ID, you are not a client nor a librarian ")
+
+
 
 class Search_controller:
     def search_for_client_by_id(self, id: int, Client_list: list[Client]):
@@ -54,5 +71,7 @@ class Search_controller:
               for item in Librarian_list:
                  if item.get_id() == id:
                       return item
+
+
 
 
