@@ -1,58 +1,35 @@
-from constants import Constants
+from Lists.constants import Constants
 from users.Client import Client
 from users.Librarian import Librarian
 from users.book import Book
-from Lists import Lists 
+from Lists.Lists import Lists
 
-
-def register_new_client(self, client: Client):
-    if not self.check_if_user_exsist(Client.get_id(client)):
-        self.Client_list.append(Client)
-    else:
-        print("User already exist!")
-
-def register_new_book(self, book: Book):
-    if not self.check_if_user_exsist(Book.get_book_id(book)):
-        self.Book_list.append(Book)
-    else:
-        print("Book already exist!")
-
-def check_if_client_exsist(self, id: str):
-        for item in self.Lists.Client_list:
-            if item.get_id() == id:
+class Search_controller:
+    def check_if_client_exsist(id:str):
+        for item in Lists.Client_list:
+            if item.get_id()== id:
                 return True
         return False
 
 
-def check_if_Librarian_exsist(self, id: str):
-    for item in self.Lists.Librarian_list:
-        if id == item.get_id() :
+    def check_if_Librarian_exsist(id:str):
+       for item in Lists.Librarian_list:
+          if item.get_id()==id:
             return True
-    return False
+       return False
 
 
-def check_if_book_available(self, name: str):
-    for item in self.Book_list:
-        if item.get_book_status() == Constants.Active_Book:
+    def check_if_book_available(name: str):
+        for item in Lists.Book_list:
+          if item.get_book_status() == Constants.Active_Book:
             return True
-    return False
+        return False
 
-def search_user_type(self, id:str):
-    if check_if_Librarian_exsist(self, id) == True:
-        return Constants.Librarian
-    elif check_if_client_exsist(self, id):
-        return Constants.Client
-    else:
-        print("enter a valid ID, you are not a client nor a librarian ")
-
-
-
-class Search_controller:
     def search_for_client_by_id(self, id: int, Client_list: list[Client]):
         if Client_list == None or len(Client_list) == 0:
             return None
         else:
-              for item in Client_list:
+             for item in Client_list:
                  if item.get_id() == id:
                       return item
 
@@ -73,5 +50,15 @@ class Search_controller:
                       return item
 
 
+class Register:
+    def register_new_client(client: Client):
+        if not Search_controller.check_if_client_exsist(Client.get_id(client)):
+            Lists.Client_list.append(client)
+        else:
+            print("User already exist!")
 
-
+    def register_new_book(book: Book):
+        if not Search_controller.check_if_book_available(Book.get_book_id(book)):
+              Lists.Book_list.append(Book)
+        else:
+            print("Book already exist!")

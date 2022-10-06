@@ -8,7 +8,5 @@ class Librarian(Person):
         self.__employment_type = employment_type
         super(Librarian, self).__init__(identity=identity, name=name,age=age,id=id)
 
-    def get_id(self):
-        return self.__id
 
 

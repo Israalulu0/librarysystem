@@ -6,7 +6,5 @@ class Client(Person):
 
         super(Client, self).__init__(identity=identity,name=name, age=age,id=id, phone=phone)
 
-    def get_id(self):
-        return self.__id
 
 
