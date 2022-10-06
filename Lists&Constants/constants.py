@@ -6,8 +6,8 @@ class Constants:
     Active_order=5
     Expired_order=6
     Cancelled_order=7
-    Librarian=8
-    Client=9
+
+
 
 
 
