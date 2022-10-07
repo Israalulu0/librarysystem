@@ -7,9 +7,9 @@ from users.Order import Order
 
 class Lists:
     Client_list: list[Client] = [
-        Client("123", "Ahmed", 35, "123","059949"),
-        Client("456", "Omar", 16,"456","059969"),
-        Client("789", "Israa", 31,"789","0597")]
+        Client("333", "Ahmed", 35, "123","059949"),
+        Client("444", "Omar", 16,"456","059969"),
+        Client("555", "Israa", 31,"789","0597")]
 
     Librarian_list: list[Librarian]= [
         Librarian("236","Mohammed",40,"987",1),
@@ -30,11 +30,17 @@ class Lists:
     ]
 
     def get_Client_list():
-        return Lists.Client_list
+        for item in Lists.Client_list:
+            print("Client identity is:",item.get_identity(),"\n Client name is:",item.get_name(),
+                  "\n Client age is:",item.get_age(),"\n Client id:",item.get_id(),"\n Client phone:",item.get_phone())
+
     def get_Librarian_list(self):
         return self.Librarian_list
     def get_Book_list():
-        return Lists.Book_list
+        for item in Lists.Book_list:
+            print("book id is:", item.get_book_id(), "\nbook title is:", item.get_book_title(), "\n description is:",
+                  item.get_book_description(), "\n book author:", item.get_book_author())
+
     def get_Borrow_Orders_list(self):
         return self.Borrow_Orders_list
 
